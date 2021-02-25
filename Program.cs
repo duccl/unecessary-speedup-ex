@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+using System;
 
 namespace primes
 {
@@ -52,7 +51,7 @@ namespace primes
                 {
                     dp += Math.Pow((timeDeltaOfEachExecution[j] - media/30.0),2)/30.0;
                 } 
-                Console.WriteLine("value " + _value + " levou " + string.Format("{0:0.000000}", media/30.0) + " com Desvio Padrao de " + string.Format("{0:0.000000}", dp/30.0));
+                Console.WriteLine("value " + _value + " levou " + string.Format("{0:0.000000}", media/30.0) + " com Desvio Padrao de " + string.Format("{0:0.000000}", Math.Sqrt(dp)));
             }
         }
     }
