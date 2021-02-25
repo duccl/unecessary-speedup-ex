@@ -2,7 +2,7 @@
 Exercise About Speed Up calculus based on prime numbers for the CC course `CC7261 - SISTEMAS DISTRIBUIDOS`
 
 ## Run
-Ensure dotnet 3 version or later and git are installed on your machine.
+Ensure dotnet version 3.0 or later and git are installed on your machine.
 
 Clone the repository
 ```bash
