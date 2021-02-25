@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace primes
 {
@@ -34,14 +35,26 @@ namespace primes
         {
             int[] values = {7,37,8431,13033,524287,664283,3531271,2147483647};
             double media = 0;
+            var functionToExecute = args.FirstOrDefault();
             foreach(var _value in values){
                 double[] timeDeltaOfEachExecution = new double[30];
                 for (int i = 0; i < 30; i++)
                 {
                     var startTime = DateTime.Now;
-                    TestaPrimo(_value);
-                    //IsPrimeSquareRoot(_value);
-                    //IsPrime(_value);
+                    switch(functionToExecute){
+                        case "TestaPrimo":
+                            TestaPrimo(_value);
+                            break;
+                        case "IsPrime":
+                            IsPrime(_value);
+                            break;
+                        case "IsPrimeSquareRoot":
+                            IsPrimeSquareRoot(_value);
+                            break;
+                        default:
+                            IsPrimeSquareRoot(_value);
+                            break;
+                    }
                     double dif = (DateTime.Now - startTime).TotalMilliseconds;
                     timeDeltaOfEachExecution.SetValue(dif,i);
                     media += dif;    
